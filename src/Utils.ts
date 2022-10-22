@@ -13,7 +13,7 @@ class Debouncer {
      */
 
     static bound(num: number, min: number, max: number) : number {
-        return Math.max(Math.min(num, max), min);
+        return num < max ? (num > min ? num : min) : max > min ? max : min;
     }
 
     static debounce<T extends Function>(fun: T, wait: number) {
